@@ -1,5 +1,5 @@
-// import { BsSearch } from "react-icons/bs";
-// import toast, { Toaster } from "react-hot-toast";
+import { BsSearch } from "react-icons/bs";
+import toast, { Toaster } from "react-hot-toast";
 
 export default function searchBar({ onSearch }) {
   const handleSubmit = (event) => {
@@ -12,7 +12,7 @@ export default function searchBar({ onSearch }) {
   };
   return (
     <header>
-      {/* <Toaster /> */}
+      <Toaster />
       <form onSubmit={handleSubmit}>
         <input
           name="searchName"
@@ -21,10 +21,10 @@ export default function searchBar({ onSearch }) {
           autofocus
           placeholder="Search images and photos"
         />
-        <button type="submit">Search</button>
-        {/* <button type="submit">
+        {/* <button type="submit">Search</button> */}
+        <button type="submit">
           <BsSearch />
-        </button> */}
+        </button>
       </form>
     </header>
   );
