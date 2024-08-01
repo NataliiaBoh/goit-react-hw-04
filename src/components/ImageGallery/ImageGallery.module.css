@@ -1,0 +1,11 @@
+.gallery {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.galleryItem {
+  width: calc((100% - 60px) / 4);
+  height: 360px;
+}

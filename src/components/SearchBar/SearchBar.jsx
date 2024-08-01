@@ -1,30 +1,32 @@
 import { BsSearch } from "react-icons/bs";
 import toast, { Toaster } from "react-hot-toast";
+import css from "./SearchBar.module.css";
 
-export default function searchBar({ onSearch }) {
+export default function SearchBar({ onSearch }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     const query = event.target.elements.searchQuery.value;
-    query.trim() === ``
-      ? toast.error(`Input can not be empty!`)
+    query.trim() === ""
+      ? toast.error("Input can not be empty!")
       : onSearch(query);
     event.target.reset();
   };
+
   return (
-    <header>
+    <header className={css.header}>
       <Toaster />
-      <form onSubmit={handleSubmit}>
+      <form className={css.searchForm} onSubmit={handleSubmit}>
+        <button className={css.searchBtn} type="submit">
+          <BsSearch className={css.searchIcon} />
+        </button>
         <input
-          name="searchName"
+          className={css.input}
+          name="searchQuery"
           type="text"
-          autocomplete="off"
-          autofocus
+          autoComplete="off"
+          autoFocus
           placeholder="Search images and photos"
         />
-        {/* <button type="submit">Search</button> */}
-        <button type="submit">
-          <BsSearch />
-        </button>
       </form>
     </header>
   );
